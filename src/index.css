@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* line-height: 1; */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+body {
+  min-width: 320px;
+}
+
+img {
+  pointer-events: none;
+}
+
+main.background-login {
+  background-image: linear-gradient(120deg, #4c79d3 50%, #fff 50%);
+  background-position: -125px;
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+
+button.btn-primary {
+  --bs-btn-bg: #4E0070;
+  --bs-btn-border-color: #4E0070;
+  --bs-btn-hover-bg: #40005c;
+  --bs-btn-hover-border-color: #380051;
+  --bs-btn-active-bg: #380051;
+  --bs-btn-active-border-color: #480069;
+  /* --bs-btn-disabled-bg: #0d6efd; */
+  /* --bs-btn-disabled-border-color: #0d6efd; */
+}
+
+button.btn-primary, button.btn-secondary {
+  --bs-btn-border-radius: .5rem;
+  transition: background-color .3s ease-in-out;
+}
+
+a.link {
+  color: #4E0070;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+
+  &:hover {
+    color: #0077ff;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 768px) {
+  main.background-login {
+    background-position: center center;
+  }
+}

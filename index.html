@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikel</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/index.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <main class="background-login">
+    <div class="container-xxl">
+      <div class="row align-items-center justify-content-center vh-100">
+        <div class="col">
+          <div class="row">
+            <div class="d-md-flex d-none col-12 col-md-6 flex-column justify-content-between">
+              <div class="row">
+                <div class="container-fluid d-flex col flex-column gap-2 text-white">
+                  <p class="m-0">Organize suas financias de uma forma fácil.</p>
+                  <p class="m-0">Controle seu dinheiro e investimentos.</p>
+                  <p class="m-0">Economize e atinja seus objetivos.</p>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="d-flex col flex-row align-items-end justify-content-end w-100">
+                  <img src="src/assets/images/pocket.png" alt="Imagem - Ilustração" class="block img-fluid" style="min-width: 0%; object-fit: cover;" loading="eager" decoding="sync" fetchpriority="high">
+                  <img src="src/assets/images/coins.png" alt="Imagem - Ilustração" class="block img-fluid" style="min-width: 0%; object-fit: cover;" loading="eager" decoding="sync" fetchpriority="high">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="d-flex container-fluid justify-content-center">
+                <img src="src/assets/images/nikel-logo.png" alt="Login - Logo" class="img-fluid" loading="eager" decoding="sync" fetchpriority="high">
+              </div>
+              <div class="container-fluid mt-4">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="email">
+                    <div id="emailHelp" class="form-text">Utilize seu e-mail para realizar login.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputPassword5" class="form-label">Senha</label>
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" required>
+                    <div id="passwordHelpBlock" class="form-text">
+                      Sua senha deve ter entre 8-20 caracteres, letras e números, sem espaços, caracteres especial ou emoji.
+                    </div>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Permanecer conectado.</label>
+                  </div>
+                  <div class="d-flex align-items-center flex-column gap-2">
+                    <button type="submit" class="btn btn-primary w-50">Entrar</button>
+                    <div class="form-text">Ainda não tem conta? <a href="#" target="" rel="noopener noreferrer" class="link" data-bs-toggle="modal" data-bs-target="#exampleModal">Criar conta</a>.</div>                    
+                  </div>
+                </form>          
+              </div>
+              <div class="container-fluid mt-4">
+                <div class="row">
+                  <div class="d-flex col-12 justify-content-center">
+                    <img src="src/assets/images/codai-logo.png" alt="Logo - Parceria" class="img-fluid" loading="eager" decoding="sync" fetchpriority="high">
+                  </div>
+                  <div class="d-flex col-12 justify-content-center mt-3">
+                    <img src="src/assets/images/growdev-logo.png" alt="Logo - Parceria" class="img-fluid" loading="eager" decoding="sync" fetchpriority="high">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Criar conta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="email">
+              <div id="emailHelp" class="form-text">Utilize um e-mail válido para realizar o cadastro.</div>
+            </div>
+            <div class="mb-3">
+              <label for="inputPassword5" class="form-label">Senha</label>
+              <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" required>
+              <div id="passwordHelpBlock" class="form-text">
+                Sua senha deve ter entre 8-20 caracteres, letras e números, sem espaços, caracteres especial ou emoji.
+              </div>
+            </div>
+          </form>     
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  </main>
+</body>
+</html>
