@@ -30,18 +30,27 @@ main.background-home {
 }
 
 button.btn-primary {
-  --bs-btn-bg: #4E0070;
-  --bs-btn-border-color: #4E0070;
-  --bs-btn-hover-bg: #40005c;
-  --bs-btn-hover-border-color: #380051;
-  --bs-btn-active-bg: #380051;
-  --bs-btn-active-border-color: #480069;
+  /* --bs-btn-bg: #4E0070 !important;
+  --bs-btn-border-color: #4E0070 !important;
+  --bs-btn-hover-bg: #40005c !important;
+  --bs-btn-hover-border-color: #380051 !important;
+  --bs-btn-active-bg: #380051 !important;
+  --bs-btn-active-border-color: #480069 !important; */
   /* --bs-btn-disabled-bg: #0d6efd; */
   /* --bs-btn-disabled-border-color: #0d6efd; */
+
+  background-color: #4E0070 !important;
+  border-color: #4E0070 !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background-color: #40005c !important;
+    border-color: #380051 !important;
+  }
 }
 
 button.btn-primary, button.btn-secondary {
-  --bs-btn-border-radius: .5rem;
+  border-radius: .5rem;
   transition: background-color .3s ease-in-out;
 }
 
