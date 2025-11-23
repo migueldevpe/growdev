@@ -34,7 +34,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
 
     saveSession(email, sessão);
 
-    window.location.href = "home.html"
+    window.location.href = "/pages/home.html"
   }
 })
 
@@ -102,7 +102,7 @@ function checkLogged() {
   if (logged) {
     saveSession(logged, session);
 
-    window.location.href = "home.html"
+    window.location.href = "/pages/home.html"
   }
 
 }

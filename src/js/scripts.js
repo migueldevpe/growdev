@@ -6,10 +6,9 @@ const transactions = document.querySelector(".transactions");
 
 // window.location.pathname === "/transactions.html" ? transactions.classList.add("active") : transactions.classList.remove("active")
 
-if (window.location.pathname === "/transactions.html") {
+if (window.location.pathname === "/pages/transactions.html") {
   transactions.classList.add("active");
-  console.log("foi")
-} else if (window.location.pathname === "/home.html") {
+} else if (window.location.pathname === "/pages/home.html") {
   home.classList.add("active")
 }
 
