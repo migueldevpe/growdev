@@ -12,7 +12,7 @@ const transactionForm = document.getElementById("transactionForm");
 document.getElementById("goToTransactions").addEventListener("click", (e) => {
   e.preventDefault();
 
-  window.location.href = "pages/transactions.html"
+  window.location.href = "/transactions.html"
 })
 
 function saveData(data) {
