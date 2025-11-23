@@ -12,6 +12,32 @@ function saveAccount(data) {
   localStorage.setItem(data.login, JSON.stringify(data));
 };
 
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("loginInputEmail1").value;
+  const senha = document.getElementById("loginInputPassword5").value;
+  const sessão = document.getElementById("loginCheck1").checked
+
+  const account = getAccount(email)
+
+  if (!account) {
+    window.alert("Email inválido, corrija.");
+    return;
+  } 
+
+  if (account) {
+    if (account.senha !== senha) {
+      window.alert("Senha inválida, corrija.");
+      return;
+    }
+
+    saveSession(email, sessão);
+
+    window.location.href = "home.html"
+  }
+})
+
 document.getElementById("createForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -26,7 +52,15 @@ document.getElementById("createForm").addEventListener("submit", function(e) {
     window.alert("Senha inválida: Senha muito pequena!");
 
     return
-  };
+  } 
+  
+  const contaExistente = getAccount(email)
+
+  if (email === contaExistente.login) {
+    window.alert("Este email já está cadastrado.");
+
+    return
+  }
 
   saveAccount({
     login: email,
@@ -34,6 +68,8 @@ document.getElementById("createForm").addEventListener("submit", function(e) {
   });
 
   registerModal.hide();
+
+  e.target.reset()
 
   window.alert("Conta criada com sucesso.")
 });
@@ -70,34 +106,4 @@ function checkLogged() {
   }
 
 }
-
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const email = document.getElementById("loginInputEmail1").value;
-  const senha = document.getElementById("loginInputPassword5").value;
-  const sessão = document.getElementById("loginCheck1").checked
-
-  const account = getAccount(email)
-
-  if (!account) {
-    window.alert("Email inválido, corrija.");
-    return;
-  } 
-
-  if (account) {
-    if (account.senha !== senha) {
-      window.alert("Senha inválida, corrija.");
-      return;
-    }
-
-    saveSession(email, sessão);
-
-    window.location.href = "home.html"
-  }
-
-  // if (sessão) {
-
-  // }
-})
 

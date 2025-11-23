@@ -9,6 +9,12 @@ const session = localStorage.getItem("session");
 
 const transactionForm = document.getElementById("transactionForm");
 
+document.getElementById("goToTransactions").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  window.location.href = "transactions.html"
+})
+
 function saveData(data) {
   localStorage.setItem(data.login, JSON.stringify(data))
 }
@@ -34,7 +40,7 @@ transactionForm.addEventListener("submit", (e) => {
   
   e.target.reset();
 
-  window.alert("Foi!");
+  window.alert("Adicionado!");
 
   addTableModal.hide();
 
