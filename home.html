@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikel - Home</title>
+
+  <meta name="description" content="...">
+
+  <link rel="stylesheet" href="src/index.css">
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <link rel="icon" href="public/assets/images/nikel-small-logo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-light bg-white border">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">
+          <img src="public/assets/images/nikel-small-logo.png" alt="Nikel - Logo" class="img-fluid">
+        </a>
+        <div>
+          <ul class="d-flex flex-row gap-4 navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class='nav-link home' title="Ir para Home"  aria-current="page" href="home.html"><i class="bi bi-house-door-fill" style="font-size: 1.5rem;"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" title="Ir para Transações" href="transactions.html"><i class="bi bi-currency-exchange" style="font-size: 1.5rem;"></i></a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+                <button class="btn nav-link" title="Sair da conta" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li id="logOut"><button type="button" class="dropdown-item">Sair</button></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="background-home" style="height: calc(100dvh - 70px);">
+    <div class="container d-flex flex-column justify-content-center h-100">
+      <div class="row">
+        <div class="col d-flex align-items-center justify-content-between">
+          <span class="fs-1" id="showMoney"></span>
+          <img src="public/assets/images/coins-small.png" alt="" class="mr-auto">
+        </div>
+      </div>
+      <div class="row">
+        <div class="container bg-white rounded-top-5 shadow p-4">
+          <div class="row {border border-2 border-top-0 border-start-0 border-end-0 pb-3}">
+            <div class="col-6">
+              <span class="fs-3">Entradas <i class="bi bi-arrow-up-circle"></i></span>
+            </div>
+            <div class="col-6">
+              <span class="fs-3">Saídas <i class="bi bi-arrow-down-circle"></i></span>
+            </div>
+            <div class="col-12 my-3">
+              <hr class="my-0">
+            </div>
+          </div>
+          <div class="row my-4">
+            <div class="col">
+              <div class="row">
+                <div class="col-6" id="cashInList">
+                  
+                </div>
+                <div class="col-6" id="cashOutList">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-primary">Ver todas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="addBtn position-fixed end-0 bottom-0 m-4 rounded-circle d-flex align-items-center justify-content-center" style="height: 60px; width: 60px; background-color: #4E0070; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#addTable">
+        <i class="bi bi-plus text-white" style="font-size: 2rem;"></i>
+      </div>
+    </div>
+    <div class="modal fade" id="addTable" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar lançamento</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body px-0">
+            <form id="transactionForm">
+              <div class="px-3">
+                <div class="mb-3">
+                  <label for="TransactionInputValue" class="form-label">Valor</label>
+                  <input type="number" class="form-control" id="TransactionInputValue" required>
+                </div>
+                <div class="mb-3">
+                  <label for="TransactionInputDesc" class="form-label">Descrição</label>
+                  <input type="text" class="form-control" id="TransactionInputDesc" required>
+                </div>
+                <div class="mb-3">
+                  <label for="TransactionInputDate" class="form-label">Data</label>
+                  <input type="date" class="form-control" id="TransactionInputDate" required>
+                </div>
+                <div class="mb-3">
+                  <p class="form-check-label">Tipo</p>
+                  <div class="d-flex flex-row gap-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioEnter" checked>
+                      <label class="form-check-label" for="flexRadioEnter">
+                        Entrada
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioLeave">
+                      <label class="form-check-label" for="flexRadioLeave">
+                        Saída
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer px-3 pb-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="src/js/scripts.js"></script>
+  <script src="src/js/home.js"></script>
+</body>
+</html>

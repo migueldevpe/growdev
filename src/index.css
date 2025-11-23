@@ -22,6 +22,13 @@ main.background-login {
   background-repeat: repeat-y;
 }
 
+main.background-home {
+  background-image: linear-gradient(120deg, #fff 50%, #4c79d3 50%);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+
 button.btn-primary {
   --bs-btn-bg: #4E0070;
   --bs-btn-border-color: #4E0070;
@@ -46,6 +53,42 @@ a.link {
   &:hover {
     color: #0077ff;
     text-decoration: underline;
+  }
+}
+
+a.nav-link i,
+button.nav-link i {
+  color: #000;
+  transition: color .3s ease-in-out;
+
+  &:hover {
+    color: #4b4b4b;
+  }
+}
+
+a.nav-link.active i,
+button.nav-link.active i {
+  color: #0077ff;
+}
+
+div.dropdown {
+  position: relative;
+}
+
+ul.dropdown-menu {
+  position: absolute !important;
+  bottom: 0;
+  left: 50% !important;
+  transform: translateX(-50%);
+  height: fit-content;
+  width: fit-content;
+}
+
+div.addBtn {
+  transition: background-color .3s ease-in-out;
+
+  &:hover {
+    background-color: #40005c !important;
   }
 }
 
