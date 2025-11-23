@@ -18,5 +18,5 @@ document.getElementById("logOut").addEventListener("click", function(e) {
   localStorage.removeItem("session");
   sessionStorage.removeItem("logged");
 
-  window.location.href = "index.html"
+  window.location.href = "/index.html"
 })
